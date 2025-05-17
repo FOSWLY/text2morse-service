@@ -114,7 +114,6 @@ function createDropdown({
       const passedOptions = options.filter((option) =>
         option.label.toLowerCase().includes(query)
       );
-      console.log(passedOptions);
       searchInfoEl.hidden = !!passedOptions.length;
       optionEls.map((optionEl) => {
         optionEl.hidden = !passedOptions.find(

@@ -24,10 +24,8 @@ async function exec() {
         expires_in,
       }),
     });
-    console.log(res);
     if (res.status !== 200) {
       const data = await res.json();
-      console.log(data);
       throw new Error(data.error);
     }
 
