@@ -1,0 +1,251 @@
+:root {
+  --background-color: #05010d;
+  --onsurface-bg: #27272a;
+  --nav-hover-color: var(--onsurface-bg);
+  --border-color: var(--onsurface-bg);
+  --link-color: #ffffff99;
+  --link-hover-color: #fff;
+  --text-color: #cfcfcf;
+  --title-color: #fff;
+  --desc-color: #949494;
+  --mono-hover-color: #f1eeeb;
+  --surface-bg: #131317;
+  --highlight-gradient: linear-gradient(90deg, #f5a97f, #f58181);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  font-family: "Roboto", "Open Sans", system-ui, sans-serif;
+  font-size: 16px;
+  scrollbar-color: hsla(0, 0%, 100%, 0.1) #252525;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+  transition: color 0.25s ease;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.textfield,
+.search {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  background: var(--border-color);
+  color: var(--text-color);
+  outline: none;
+  border: none;
+}
+
+.textfield-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.5rem;
+}
+
+.textfield_outline {
+  background: transparent;
+  border: 1px solid var(--border-color);
+}
+
+.textfield:focus,
+.search:focus {
+  outline: 1px solid var(--title-color);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  min-height: 100svh;
+  max-width: 1280px;
+}
+
+.header {
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  gap: 0.5rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links__item > a {
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: transparent;
+  transition: background 0.35s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  background: transparent;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+.nav-links__item > a {
+  display: block;
+}
+
+.logo:hover,
+.nav-links__item:hover > a {
+  background: var(--nav-hover-color);
+}
+
+.nav-links__item:hover > a {
+  color: var(--link-hover-color);
+}
+
+.wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.button:hover {
+  background: var(--mono-hover-color);
+}
+
+.button.button_outline {
+  background: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.button.button_outline:hover {
+  background: var(--border-color);
+  color: #fff;
+}
+
+.nojs-notice {
+  background: var(--popup-color);
+  border-radius: 1.5rem;
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  margin: 0 0.5rem;
+}
+
+.nojs-notice__image {
+  width: 128px;
+  height: 128px;
+}
+
+.nojs-texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nojs-texts__title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.nojs-notice__desc {
+  font-size: 1.5rem;
+}
+
+.highlight {
+  -webkit-text-fill-color: transparent;
+  background: var(--highlight-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.textarea-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.textarea {
+  background: transparent;
+  color: var(--text-color);
+  padding: 0.75rem;
+  border: 1px solid #3e3e3e;
+  border-radius: 0.5rem;
+  resize: none;
+}
+
+.textarea.textarea_clear {
+  border: none;
+  padding: 0 0.75rem 0 0;
+  word-break: break-word;
+  overflow-x: hidden;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+.info-text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 0.5rem;
+  word-break: break-all;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "components/meta.html" %}
+    <link rel="stylesheet" href="/assets/styles/legal.css" />
+  </head>
+  <body>
+    <div class="app">
+      {% include "components/header.html" %}
+      <main class="wrapper">
+        <div class="legal-wrapper">
+          <section class="legal-section">
+            <h1 class="legal-title">{{ current_page.title }}</h1>
+            {% match current_page.legal_type %} {% when
+            crate::routes::legal::LegalType::Terms %} {% include
+            "content/terms.html" %} {% when
+            crate::routes::legal::LegalType::Privacy %} {% include
+            "content/privacy.html" %} {% endmatch %}
+          </section>
+          <aside class="aside-page">
+            <nav class="page-nav">
+              <ul class="page-items">
+                {% for page in crate::routes::legal::LEGAL_PAGES %}
+                <li class="page-item">
+                  <a
+                    class="page-item__link"
+                    href="{{ page.legal_type }}"
+                    {% if page.legal_type == current_page.legal_type %}
+                    aria-current="page"
+                    {% endif %}
+                    >{{ page.title }}</a
+                  >
+                </li>
+                {% endfor %}
+              </ul>
+            </nav>
+          </aside>
+        </div>
+      </main>
+      {% include "components/footer.html" %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "components/meta.html" %}
+  </head>
+  <body>
+    <div class="app">
+      {% include "components/header.html" %}
+      <main class="wrapper">
+        <section class="redirecting">
+          <p class="info-text">
+            We are redirecting you...<br />Wait a few seconds.
+          </p>
+        </section>
+        {% include "components/nojs.html" %}
+      </main>
+      {% include "components/footer.html" %}
+    </div>
+    <script src="/assets/scripts/callback.js"></script>
+  </body>
+</html>

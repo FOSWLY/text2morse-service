@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "components/meta.html" %}
+    <link rel="stylesheet" href="/assets/styles/logout.css" />
+  </head>
+  <body>
+    <div class="app">
+      {% include "components/header.html" %}
+      <main class="wrapper">
+        <section class="section">
+          <p class="info-text">Are you sure you want to log out?</p>
+          <div class="logout-actions">
+            <button id="logout-btn" class="button button_outline">
+              Logout
+            </button>
+            <button id="stay-btn" class="button">Stay here</button>
+          </div>
+        </section>
+        {% include "components/nojs.html" %}
+      </main>
+      {% include "components/footer.html" %}
+    </div>
+    <script src="/assets/scripts/logout.js"></script>
+  </body>
+</html>

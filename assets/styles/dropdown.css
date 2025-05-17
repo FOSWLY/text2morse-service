@@ -1,0 +1,115 @@
+:root {
+  --popup-color: #1d1d1d;
+  --dropdown-separator-color: #3e3d3d;
+  --dropdown-disabled-color: #575757;
+  --dropdown-selected-color: #27272a;
+  --dropdown-hover-color: #262626;
+}
+
+.popup {
+  position: absolute;
+  background: var(--popup-color);
+  width: max-content;
+  margin: 4.1rem auto 0;
+  left: 0;
+  right: 0;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  z-index: 777;
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 240px;
+}
+
+.dropdown[data-opened="true"] > .dropdown-popup {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown[data-opened="true"] .dropdown-button__icon {
+  transform: rotate(180deg);
+}
+
+.dropdown-title {
+  width: max-content;
+  cursor: default;
+}
+
+.dropdown-popup {
+  width: 100%;
+  max-height: 320px;
+  overflow-y: scroll;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.dropdown-button {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  gap: 0.5rem;
+}
+
+.dropdown-button__icon {
+  width: 14px;
+  height: 14px;
+  margin-left: auto;
+  transition: transform 0.25s ease;
+}
+
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dropdown-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.925rem;
+}
+
+.dropdown-search {
+  border-radius: 0.375rem;
+}
+
+.dropdown-search__info {
+  padding: 0.5rem 0.75rem 0.95rem;
+  margin: 0 auto;
+}
+
+.dropdown-separator {
+  width: calc(100% - 0.75rem);
+  height: 1px;
+  background: var(--dropdown-separator-color);
+  margin: 0 auto;
+}
+
+.dropdown-list__item {
+  user-select: none;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  transition: background 0.25s ease;
+}
+
+.dropdown-list__item[data-disabled="true"] {
+  cursor: initial;
+  color: var(--dropdown-disabled-color);
+}
+
+.dropdown-list__item[data-selected="true"] {
+  background: var(--dropdown-selected-color);
+}
+
+.dropdown-list__item:not([data-disabled="true"]):hover {
+  background: var(--dropdown-hover-color);
+}

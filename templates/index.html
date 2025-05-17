@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "components/meta.html" %}
+    <link rel="stylesheet" href="/assets/styles/index.css" />
+  </head>
+  <body>
+    <div class="app">
+      {% include "components/header.html" %}
+      <main class="wrapper">
+        <section class="hero">
+          <h1 class="hero-title">Fast. Secure. Effortless.</h1>
+          <p class="hero-desc">
+            Log in for a seamless, private experience.
+            <span class="highlight">Instantly</span> convert text to Morse code
+            — no clutter, <span class="highlight">no compromise</span>.
+          </p>
+          <div class="auth-container">
+            {% if !is_authenticated -%}
+            <a class="button auth-button__yandex" href="/v1/auth/handle">
+              <span class="auth-button__yandex-logo"></span>
+              <span class="auth-button__yandex-text"
+                >Sign in with Yandex ID</span
+              >
+            </a>
+            {%- else -%}
+            <a class="button button_outline" href="/my/profile"
+              >Go to Profile</a
+            >
+            {%- endif %}
+          </div>
+        </section>
+        {% include "components/nojs.html" %}
+      </main>
+      {% include "components/footer.html" %}
+    </div>
+  </body>
+</html>

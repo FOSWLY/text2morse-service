@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "components/meta.html" %}
+  </head>
+  <body>
+    <div class="app">
+      {% include "components/header.html" %}
+      <main class="wrapper">
+        <section class="section">
+          <p class="info-text">{{ error }}</p>
+          <a class="button button_outline" href="/">Go to main</a>
+        </section>
+      </main>
+      {% include "components/footer.html" %}
+    </div>
+  </body>
+</html>

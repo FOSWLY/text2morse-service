@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "components/meta.html" %}
+    <link rel="stylesheet" href="/assets/styles/profile.css" />
+  </head>
+  <body>
+    <div class="app">
+      {% include "components/header.html" %}
+      <main class="wrapper">
+        <section class="profile">
+          <div class="profile-header">
+            <div class="profile-avatar__wrapper">
+              <img
+                src="https://avatars.yandex.net/get-yapic/{{ avatar_id }}/islands-retina-middle"
+                alt="{{ username }}'s avatar"
+                class="profile-avatar"
+              />
+            </div>
+            <div class="profile-info">
+              <h1 class="profile-title highlight">{{ username }}</h1>
+              <p class="profile-desc">A UFO stole this text</p>
+            </div>
+          </div>
+          <div class="profile-body">
+            <div class="converter-container">
+              <div class="textarea-wrapper">
+                <p>Input</p>
+                <textarea
+                  class="textarea textarea-morse"
+                  id="morse-input"
+                  placeholder="Type here..."
+                  autocomplete="off"
+                ></textarea>
+              </div>
+              <div class="textarea-wrapper">
+                <p>Output</p>
+                <p
+                  class="textarea textarea_clear textarea-morse"
+                  id="morse-output"
+                >
+                  --. --- -. -. .- / -... . / --- -.-
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="actions-container">
+            <a class="button button_outline" href="/auth/logout">Log out</a>
+          </div>
+        </section>
+        {% include "components/nojs.html" %}
+      </main>
+      {% include "components/footer.html" %}
+      <script
+        type="text/javascript"
+        src="/assets/scripts/morse.min.js"
+      ></script>
+      <script type="application/javascript">
+        window._userData = {
+          username: "{{ username }}",
+          avatar_id: "{{ avatar_id }}",
+        };
+      </script>
+      <script type="text/javascript" src="/assets/scripts/dropdown.js"></script>
+      <script type="text/javascript" src="/assets/scripts/profile.js"></script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+@import url("/assets/styles/dropdown.css");
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.profile-avatar__wrapper {
+  font-size: 0.75rem;
+  max-width: 56px;
+  min-width: 56px;
+  max-height: 56px;
+  min-height: 56px;
+  overflow: hidden;
+}
+
+.profile-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.converter-container {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.textarea-morse {
+  max-width: 300px;
+  width: 300px;
+  min-width: 300px;
+  height: 120px;
+  min-height: 120px;
+  max-height: 120px;
+}
+
+@media (max-width: 680px) {
+  .profile {
+    gap: 1rem;
+  }
+
+  .converter-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
