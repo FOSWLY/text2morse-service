@@ -13,6 +13,8 @@ RUN cargo build --release
 FROM alpine:latest
 
 COPY --from=builder /usr/src/app/target/release/text2morse /usr/local/bin/text2morse
+COPY assets /usr/local/bin/assets
 ENV SERVICE_HOST=0.0.0.0
 
+WORKDIR /usr/local/bin
 CMD ["text2morse"]
